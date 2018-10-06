@@ -25,8 +25,8 @@ public class TestController {
         return "index";
     }
 
-    @RequestMapping("/test")
+    @RequestMapping("/internationalization")
     public String test() {
-        return "test";
+        return "internationalization";
     }
 }
