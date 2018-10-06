@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: study-thymeleaf
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/thymeleaf?useSSL=false
+    username: root
+    password: 19981002520qq
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  data:
+    jpa:
+      repositories:
+        enabled: true
+
+  messages:
+    encoding: UTF-8  #默认
+    basename: message #默认为messages，这里设置指向resource下的message配置文件
+
+  # thymeleaf相关配置
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+    prefix: classpath:/templates/
+    suffix: .html
