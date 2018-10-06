@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>test th:if</title>
+</head>
+
+<body>
+  <p th:if="${score ge 60}">及格</p>
+  <p th:if="${score lt 60}">不及格</p>
+  <p th:if="${score eq 60}">刚刚及格</p>
+  <p th:if="${score ne 60}">成绩不是60分</p>
+</body>
+</html>

@@ -50,4 +50,11 @@ public class TestController {
 
         return "thymeleafObject";
     }
+
+    @RequestMapping("/test/if")
+    public String testIf(Model model) {
+        model.addAttribute("score", 99);
+
+        return "testIf";
+    }
 }
