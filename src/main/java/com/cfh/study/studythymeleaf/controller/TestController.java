@@ -4,7 +4,11 @@ import com.cfh.study.studythymeleaf.pojo.Article;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.thymeleaf.context.WebContext;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 /**
@@ -35,5 +39,15 @@ public class TestController {
         model.addAttribute("name", "tinysakura");
 
         return "placeholder";
+    }
+
+    @RequestMapping("/thymeleaf/objects")
+    public String testThymeleafObjects(Model model, HttpServletRequest request, HttpServletResponse response,
+                                       HttpSession session) {
+        WebContext ctx = new WebContext(request, response, request.getServletContext());
+        ctx.setVariable("book", "白夜行");
+        session.setAttribute("city", "琅琊古城");
+
+        return "thymeleafObject";
     }
 }

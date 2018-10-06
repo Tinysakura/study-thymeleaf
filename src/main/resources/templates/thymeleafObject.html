@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleafObject</title>
+</head>
+<body>
+    <div class="panel-body">
+        #ctx.#vars：<br/>
+        <textarea th:text="${#ctx.#vars}" rows="10" cols="150"></textarea><br/>
+        <!--从webcontext中获取变量-->
+        喜欢看的书：<span th:text="${#vars.book}"></span><br/>
+        <!--从session中获取变量-->
+        喜欢的城市：<span th:text="${#httpSession.getAttribute('city')}"></span><br/>
+        <!--从locale对象中获取国家与语言信息-->
+        你的国家：<span th:text="${#locale.country}+'-'+${#locale.getDisplayCountry()}"></span><br/>
+        你的母语：<span th:text="${#locale.language}+'-'+${#locale.getDisplayLanguage()}"></span><br/>
+        <hr/>
+        时间：<span th:text="${#dates.format(#dates.createNow())}"></span><br/>
+        收入：<span th:text="'￥'+${#numbers.formatDecimal(2345.5645345, 3, 2)}"></span><br/>
+    </div>
+</body>
+</html>
