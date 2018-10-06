@@ -57,4 +57,9 @@ public class TestController {
 
         return "testIf";
     }
+
+    @RequestMapping("/fragment")
+    public String testFragment() {
+        return "useFragment";
+    }
 }

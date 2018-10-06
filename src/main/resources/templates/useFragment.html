@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>userfragment</title>
+</head>
+<body>
+<p>it is head</p>
+
+<p>it is content</p>
+
+<!--保留自己的主标签，保留fragment的主标签-->
+<div th:insert="fragment_footer :: one"></div>
+<!--舍弃自己的主标签，保留fragment的主标签-->
+<div th:replace="fragment_footer :: one"></div>
+<!--保留自己的主标签，舍弃fragment的主标签-->
+<div th:include="fragment_footer :: one"></div>
+</body>
+</html>
