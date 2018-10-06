@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+
+<body>
+    <form th:action="@{/user/add}" method="post" th:method="post">
+        id:<input type="text" name="id"/>
+        name:<input type="text" name="username"/>
+        <input type="text" name="registerTime" hidden="hidden" th:value="${#dates.createNow()}"/>
+
+        <input type="submit"/>
+    </form>
+</body>
+</html>
