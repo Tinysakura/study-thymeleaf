@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  * @Author: cfh
  * @Date: 2018/10/6 15:56
@@ -24,5 +26,13 @@ public class UserController {
         model.addAttribute("user", user);
 
         return "showOneUser";
+    }
+
+    @RequestMapping("/all")
+    public String findAll(Model model) {
+        List<User> userList = userService.findAllUsers();
+        model.addAttribute("users", userList);
+
+        return "showAllUser";
     }
 }
