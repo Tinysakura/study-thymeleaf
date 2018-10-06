@@ -26,7 +26,14 @@ public class TestController {
     }
 
     @RequestMapping("/internationalization")
-    public String test() {
+    public String testInternationalization() {
         return "internationalization";
+    }
+
+    @RequestMapping("/placeholder")
+    public String testPlaceholder(Model model) {
+        model.addAttribute("name", "tinysakura");
+
+        return "placeholder";
     }
 }
