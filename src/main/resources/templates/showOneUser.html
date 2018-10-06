@@ -14,5 +14,17 @@
     注册时间：<span th:text="${#dates.format(user.registerTime, 'yyyy-MM-dd hh:mm:ss')}"></span><br/>
     <!--使用三目运算符-->
     权限：<span th:text="${user.popedom==0?'管理员':'普通用户'}"></span><br/>
+
+    <!--测试选择变量表达式*{}的使用-->
+    <div th:object="${user}">
+        编号：<span th:text="*{id}"></span><br/>
+        用户名：<span th:text="*{username}"></span><br/>
+        密码：<span th:text="*{password}"></span><br/>
+        电话：<span th:text="*{telephone}"></span><br/>
+        <!--使用dates.format对日期格式化-->
+        注册时间：<span th:text="*{#dates.format(registerTime, 'yyyy-MM-dd hh:mm:ss')}"></span><br/>
+        <!--使用三目运算符-->
+        权限：<span th:text="*{popedom==0?'管理员':'普通用户'}"></span><br/>
+    </div>
 </body>
 </html>
