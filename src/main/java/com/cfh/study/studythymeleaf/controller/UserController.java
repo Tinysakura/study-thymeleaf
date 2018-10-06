@@ -2,6 +2,7 @@ package com.cfh.study.studythymeleaf.controller;
 
 import com.cfh.study.studythymeleaf.pojo.User;
 import com.cfh.study.studythymeleaf.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
     @Autowired
     private UserService userService;
@@ -34,5 +36,15 @@ public class UserController {
         model.addAttribute("users", userList);
 
         return "showAllUser";
+    }
+
+    @RequestMapping("/detail")
+    public String showDetail(int userId, Model model) {
+        log.info("userId:{}", userId);
+
+        User user = userService.findOneUser();
+        model.addAttribute("user", user);
+
+        return "showOneUser";
     }
 }

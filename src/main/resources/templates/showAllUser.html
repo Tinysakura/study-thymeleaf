@@ -9,7 +9,7 @@
     <div>
         <ul>
             <li class="list-group-item" th:each="user:${users}">
-                编号：<span th:text="${user.id}"></span><br/>
+                编号：<a th:text="${user.id}" th:href="@{/user/detail(userId=${user.id})}"></a><br/>
                 用户名：<span th:text="${user.username}"></span><br/>
                 密码：<span th:text="${user.password}"></span><br/>
                 电话：<span th:text="${user.telephone}"></span><br/>
